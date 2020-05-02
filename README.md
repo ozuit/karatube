@@ -4,7 +4,7 @@
   <img src="https://github.com/ozuit/karatube/blob/master/assets/demo.png">
 </p>
 
-This is a simple example [Electron](https://electronjs.org/) + [React.js](https://reactjs.org/) template (with live reload). It was designed to work without the need of a development server running in the background, like so many other templates, and it's hence free of cross domain request constraints ([CORS](https://reactjs.org/)).
+This is a simple [Electron](https://electronjs.org/) + [React.js](https://reactjs.org/) example (with live reload). It was designed to work without the need of a development server running in the background, like so many other templates, and it's hence free of cross domain request constraints ([CORS](https://reactjs.org/)). For more infomation [here](https://github.com/ozuit/electrate).
 
 ## Installing
 
