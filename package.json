@@ -1,0 +1,59 @@
+{
+  "name": "electrate",
+  "version": "1.0.0",
+  "description": "A minimal Electron application",
+  "main": "app/main.js",
+  "scripts": {
+    "postinstall": "install-app-deps",
+    "build": "gulp build",
+    "start": "gulp",
+    "test": "gulp test",
+    "release": "gulp release",
+    "make-icon": "gulp make-icon"
+  },
+  "repository": "https://github.com/electron/electron-quick-start",
+  "keywords": [
+    "Electron",
+    "quick",
+    "start",
+    "tutorial",
+    "demo"
+  ],
+  "author": "GitHub",
+  "license": "CC0-1.0",
+  "devDependencies": {
+    "@babel/core": "^7.4.4",
+    "@babel/plugin-proposal-class-properties": "^7.5.5",
+    "@babel/preset-env": "^7.4.4",
+    "@babel/preset-react": "^7.0.0",
+    "babel-jest": "^24.8.0",
+    "electron": "~5.0.1",
+    "electron-builder": "^20.39.0",
+    "electron-icon-maker": "0.0.4",
+    "electron-react-devtools": "^0.5.3",
+    "gulp": "^4.0.2",
+    "gulp-babel": "^8.0.0",
+    "gulp-clean-css": "^4.2.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-livereload": "^4.0.1",
+    "jest": "^24.8.0",
+    "react-test-renderer": "^16.8.6"
+  },
+  "dependencies": {
+    "babel-polyfill": "^6.26.0",
+    "electron-is-dev": "^1.1.0",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-router-dom": "^5.0.0",
+    "react-youtube": "^7.11.2"
+  },
+  "build": {
+    "appId": "com.karmadust.electrate",
+    "files": [
+      "app/**/*",
+      "node_modules/**/*",
+      "package.json"
+    ],
+    "publish": null
+  }
+}
