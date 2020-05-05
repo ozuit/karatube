@@ -11,7 +11,8 @@ let mainWindow;
 const createWindow = () => {
   mainWindow = new BrowserWindow({
     webPreferences: {
-      nodeIntegration: true
+      nodeIntegration: true,
+      devTools: false,
     }
   });
 
