@@ -1,13 +1,13 @@
 import React from 'react';
 import Player from './component/Player';
 import Video from './component/Video';
+import { connect } from 'react-redux';
 
-export default class App extends React.Component {
+class App extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
             search_str: '',
-            youtube_id: 'jQMW_BVmkyc',
             videos: [],
         }
     }
@@ -46,14 +46,13 @@ export default class App extends React.Component {
         return (
             <div className="container">
                 <div className="current-video">
-                    <Player youtube_id={this.state.youtube_id} />
+                    <Player youtube_id={this.props.current_video} />
                 </div>
                 <div className="search-container">
                     <input className="form-control search-input" type="text" value={this.state.search_str} onChange={this.handleSearch} onKeyPress={this.handleSubmit} placeholder="Nhập tên bài hát và nhấn enter..." />
                     {
                         this.state.videos.map((video, index) => (
                             <Video key={index}
-                                handleClick={() => this.setState({ youtube_id: video.id.videoId })}
                                 title={video.snippet.title}
                                 id={video.id.videoId}
                             />
@@ -64,3 +63,11 @@ export default class App extends React.Component {
         );
     }
 }
+
+const mapStateToProps = function(state) {
+    return {
+        current_video: state.video
+    }
+}
+
+export default connect(mapStateToProps, null)(App)
