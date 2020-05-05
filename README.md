@@ -34,3 +34,6 @@ npm run release
 ```
 
 Check the `dist` folder for the app
+
+## Todos
+Record & download audio/video

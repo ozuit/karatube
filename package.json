@@ -8,7 +8,7 @@
     "build": "gulp build",
     "start": "gulp",
     "test": "gulp test",
-    "release": "gulp release",
+    "release": "NODE_ENV='production' gulp release",
     "make-icon": "gulp make-icon"
   },
   "repository": "https://github.com/electron/electron-quick-start",

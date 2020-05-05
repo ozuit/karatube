@@ -3,31 +3,46 @@ const gulp = require('gulp');
 const babel = require('gulp-babel');
 const css = require('gulp-clean-css');
 const livereload = require('gulp-livereload');
+const env = process.env.NODE_ENV || 'development';
 
 gulp.task('html', () => {
-    return gulp.src('src/index.html')
-        .pipe(gulp.dest('app/'))
-        .pipe(livereload());
+    if (env === 'development') {
+        return  gulp.src('src/index.html')
+                    .pipe(gulp.dest('app/'))
+                    .pipe(livereload());
+    } else {
+        return  gulp.src('src/production/index.html')
+                    .pipe(gulp.dest('app/'));
+    }
 });
 
 gulp.task('css', () => {
-    return gulp.src('src/**/*.css')
-        .pipe(css())
-        .pipe(gulp.dest('app/'))
-        .pipe(livereload());
+    var pipes = gulp.src('src/**/*.css')
+                    .pipe(css())
+                    .pipe(gulp.dest('app/'));
+    if (env === 'development') {
+        pipes.pipe(livereload());
+    }                    
+    return pipes;  
 });
 
 gulp.task('js', () => {
-    return gulp.src(['main.js', 'src/**/*.js'])
-         .pipe(babel())
-         .pipe(gulp.dest('app/'))
-         .pipe(livereload());
+    var pipes = gulp.src(['main.js', 'src/**/*.js'])
+                    .pipe(babel())
+                    .pipe(gulp.dest('app/'));
+    if (env === 'development') {
+        pipes.pipe(livereload());
+    }                    
+    return pipes; 
 });
 
 gulp.task('images', () => {
-    return gulp.src('src/assets/*')
-         .pipe(gulp.dest('app/assets'))
-         .pipe(livereload());
+    var pipes = gulp.src('src/assets/*')
+                    .pipe(gulp.dest('app/assets'));
+    if (env === 'development') {
+        pipes.pipe(livereload());
+    }                    
+    return pipes;
 })
 
 gulp.task('watch', async function() {

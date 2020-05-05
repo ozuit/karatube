@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="./index.css">
+    <title>Karatube</title>
+  </head>
+  <body>
+    <div id="app">
+    </div>
+
+    <script>
+      function init() {
+        gapi.client.setApiKey("AIzaSyCfIhzZlUk8w44nlAS-oollzL3OVZXzwqE");
+        gapi.client.load("youtube", "v3", function() {
+          // yt api is ready
+        });
+      }
+    </script>
+    <script src="https://apis.google.com/js/client.js?onload=init"></script>
+    <script src="./index.js"></script>
+  </body>
+</html>
