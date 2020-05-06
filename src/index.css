@@ -22,3 +22,7 @@ body {
 .video-item {
     margin-top: 20px;
 }
+
+#youtube-frame {
+    height: 92vh;
+}

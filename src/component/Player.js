@@ -4,7 +4,6 @@ import YouTube from 'react-youtube';
 export default class Player extends React.Component {
   render() {
     const opts = {
-      height: '600',
       width: '100%',
       playerVars: {
         // https://developers.google.com/youtube/player_parameters
@@ -12,7 +11,7 @@ export default class Player extends React.Component {
       },
     };
 
-    return <YouTube videoId={this.props.youtube_id} opts={opts} onReady={this._onReady} />;
+    return <YouTube id="youtube-frame" videoId={this.props.youtube_id} opts={opts} onReady={this._onReady} />;
   }
 
   _onReady(event) {
