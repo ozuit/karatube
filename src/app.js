@@ -12,13 +12,6 @@ class App extends React.Component {
         }
     }
 
-    componentDidMount = () => {
-        gapi.client.setApiKey("AIzaSyCfIhzZlUk8w44nlAS-oollzL3OVZXzwqE");
-        gapi.client.load("youtube", "v3", function() {
-            // yt api is ready
-        });
-    }
-
     handleSearch = (e) => {
         this.setState({
             search_str: e.target.value
@@ -34,7 +27,6 @@ class App extends React.Component {
                 maxResults: 3,
             }).execute((response) => {
                 var results = response.result;
-                console.log(results.items)
                 this.setState({
                     videos: results.items,
                 })
